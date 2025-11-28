@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>FlexyPurse — Terms of Service</title>
+
+<style>
+  body{
+    font-family: Arial, sans-serif;
+    background: #0e0e0e;
+    color: #fff;
+    margin:0;
+    display:flex;
+    justify-content:center;
+    padding:30px;
+  }
+  .card{
+    width:900px;
+    background:#1a1a1a;
+    padding:35px;
+    border-radius:12px;
+  }
+  h1,h2{color:#00bcd4;}
+  h1{text-align:center;margin-top:0;}
+  .lang-switch{text-align:center;margin-bottom:10px;}
+  .lang-switch span{
+    cursor:pointer;
+    color:#00bcd4;
+    font-weight:bold;
+    margin:0 6px;
+  }
+  nav.toc{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    margin-bottom:14px;
+  }
+  nav.toc a{
+    color:#bbb;
+    text-decoration:none;
+    border:1px solid #333;
+    padding:4px 10px;
+    border-radius:6px;
+    font-weight: bold;
+  }
+  nav.toc a:hover{
+    color:#00bcd4;
+    border-color:#00bcd4;
+  }
+
+  .scroll-box{
+    padding-right:10px;
+    border:1px solid #333;
+    border-radius:8px;
+    color:white;
+    max-height: none;
+    overflow-y: visible;
+    line-height: 1.6;
+  }
+
+  button{
+    width:30%;
+    padding:12px;
+    margin-top:15px;
+    font-size:16px;
+    border:none;
+    border-radius:8px;
+    background:#00bcd4;
+    color:#fff;
+    cursor:pointer;
+    font-weight: bold;
+  }
+  button:hover{background:#0097a7;}
+</style>
+</head>
+<body>
+
+<div class="card">
+
+<h1>FlexyPurse — Terms of Service</h1>
+<p style="text-align:center;">Last updated: <b>28/11/2025</b></p>
+
+<div class="lang-switch">
+  <span onclick="loadLang('en')">EN</span> |
+  <span onclick="loadLang('ar')">AR</span> |
+  <span onclick="loadLang('fr')">FR</span>
+</div>
+
+<nav class="toc" id="toc"></nav>
+
+<div class="scroll-box">
+  <div id="terms"></div>
+</div>
+
+<button onclick="downloadPDF()">Download as PDF</button>
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+<script>
+const tocLabels = {
+  en:["Introduction","Account & Verification","Balance & Recharges","Green Points","Local Payments","International Payments","Liability & Limitations","Privacy & Security","Termination and Suspension","Dispute Resolution","Contact"],
+  ar:["المقدمة","الحساب و التحقق","الرصيد و الشحن","النقاط  الخضراء","المدفوعات المحلية","المدفوعات الدولية","المسؤولية و القيود","الخصوصية و الأمان","الإنهاء و التعليق","النزاعات و القوانين المطبقة","الاتصال"],
+  fr:["Introduction","Compte et Vérification","Solde et Rechargements","Green Points","Paiements Locaux","Paiements Internationaux","Responsabilité et Limitations","Confidentialité & Sécurité","Suspension et Résiliation","Résolution des Litiges","Contact"]
+};
+
+const tocIds = ["intro","account","balance","green points","local","intl","liability","privacy","termination","disputes","contact"];
+
+const terms = {
+en:`<section id="intro"><h2> 1. Introduction</h2><p> These Terms of Service govern the use of <b>FlexyPurse</b>, 
+a digital payment and wallet service that allows users to maintain an account balance and recharge it using certified gift cards or in-app payment options. 
+By installing or using <b>FlexyPurse</b>, you agree to comply with these Terms. If you do not accept them, do not use the application.
+<p> Account refers to your personal <b>FlexyPurse</b> profile containing your information, balance, and activity history.</p>
+<h3>Definitions: </h3>
+<p> Balance refers to the USD value available in your <b>FlexyPurse</b> account.</p>
+<p> Green Points refers to loyalty reward points earned from eligible recharges.</p>
+<p> Certified Stores refers to official partners displayed inside the app map.</p>
+<p> Gift Cards refers to recharge cards approved by <b>FlexyPurse</b>.</p>
+</p></section>
+
+<section id="account"><h2> 2. Account & Verification</h2><p>You must provide accurate, current, and complete information.
+ <b>FlexyPurse</b> may request additional verification (document, selfie, technical data) for security or compliance purposes. 
+Any false information may result in immediate suspension or deletion of the account.</p></section>
+
+<section id="balance"><h2> 3. Balance & Recharges </h2><p> The balance is displayed in USD. 
+Recharging your balance can only be done using certified gift cards sold in authorized stores or through in-app payment methods.
+ <b>FlexyPurse</b> is not responsible for losses resulting from cards purchased outside official channels. Stolen, invalid, or misused cards will be rejected.
+<b>FlexyPurse</b> strictly warns users not to buy gift cards from uncertified stores or individuals. 
+Cards sold outside official channels may be stolen or illegal. Using such cards may expose you to legal questioning.
+ Certified stores and partners are clearly displayed inside the <b>FlexyPurse</b> map.
+</p></section>
+
+<section id="green points"><h2> 4. Green Points</h2><p>Green Points are issued automatically when users recharge through certified channels.
+These points:
+<p> – are not money </p>
+<p> – cannot be sold, exchanged, or withdrawn </p>
+<p> – cannot be transferred to other users, and may only be used for features available inside the app. </p>
+ <p> Once a user reaches one thousand Green Points, the app uses them to fund the planting of trees. 
+This progress is shown in a dedicated progress bar. The cost of planting trees is fully deducted from FlexyPurse’s profits and never touches the user’s balance.
+ Users also have the option to initiate tree planting at any time, even before reaching the one-thousand-point threshold. 
+The cost is fixed at one dollar per tree.</p> 
+ </p> </section>
+
+<section id="local"><h2> 5. Local Payments</h2><p> For local services (utilities, telecom, education, subscriptions, etc.), 
+the equivalent amount in the service’s currency will be deducted from the user’s balance, plus any applicable fees.
+All validated transactions are final and non-refundable
+</p></section>
+
+<section id="intl"><h2> 6. International Payments</h2><p> International payments rely on third-party processors. 
+These partners may apply limits, delays, or refusals. <b>FlexyPurse</b> does not control these decisions and is not responsible for them.</p></section>
+
+<section id="liability"><h2> 7. Liability & Limitations</h2><p> <b>FlexyPurse</b> is not responsible for:</p>
+<p> - Losses caused by stolen or unauthorized gift cards.</p>
+<p> - Damage resulting from user negligence.</p>
+<p> - Interruptions due to technical maintenance.</p>
+<p> - Third-party service disruptions.</p>
+<p> - <b>FlexyPurse</b> does not guarantee continuous access to the service.
+</p></section>
+
+<section id="privacy"><h2> 8. Privacy & Security</h2><p> <b>FlexyPurse</b> collects only the data required for account operation, verification, and security.
+You are responsible for keeping your credentials secure. <b>FlexyPurse</b> is not liable for unauthorized access caused by user negligence.
+<p><b>FlexyPurse</b> may use automated systems and manual reviews to detect fraud, identity misuse,
+ or suspicious activity. The app may temporarily hold or freeze transactions until verification is completed.
+</p></section>
+
+<section id="termination"><h2> 9. Termination and Suspension</h2><p> Your access to the service can be suspended or permanently terminated if you engage in any prohibited actions, 
+violate the Terms, attempt fraud, abuse the system, or trigger security or legal concerns.
+We may restrict features, freeze balance movements, or lock the account without prior notice when suspicious activity is detected.
+You can deactivate your account at any time. Deactivation is temporary and reversible.
+Deleting your account is final. Once deleted, it cannot be restored.
+Even after deletion, we may retain certain information when legally required or for security, audit, fraud-prevention, or compliance obligations.
+</p></section>
+
+<section id="disputes"><h2> 10. Dispute Resolution</h2><p> Any dispute must first be submitted through customer support. If no resolution is reached, 
+the dispute will follow internationally recognized principles of digital service law and be handled by a competent jurisdiction chosen according to <b>FlexyPurse</b>’s operational framework
+</p></section>
+
+<section id="contact"><h2> 11. Contact</h2><p> For any questions, comments, or requests regarding these Terms and Conditions, you can reach our support team at:<b>support@flexypurse.com</b></p></section>
+`,
+
+ar:`<section id="intro"><h2> 1.  المقدمة </h2><p> تحكم هذه الشروط استخدام تطبيق <b>FlexyPurse</b>، وهو خدمة دفع رقمية تسمح للمستخدمين بالاحتفاظ برصيد بالدولار الأمريكي وشحنه عبر بطاقات الهدايا المعتمدة أو عبر وسائل الدفع داخل التطبيق. باستخدامك للتطبيق، فإنك توافق على الالتزام بهذه الشروط. في حال عدم موافقتك، يرجى التوقف عن استخدام التطبيق.
+<h3>التعريفات</h3>
+الحساب هو ملف المستخدم في <b>FlexyPurse</b> ويتضمن المعلومات الشخصية، الرصيد، وسجل العمليات
+<p>الرصيد هو القيمة المتوفرة في حسابك بالدولار الأمريكي.</p>
+<p>  النقاط الخضراء هي نقاط ولاء تُمنح عند الشحن من مصادر معتمدة</p>
+<p>المتاجر المعتمدة هي الشركاء الرسميون المعروضون داخل خريطة التطبيق</p>
+بطاقات الشحن هي البطاقات التي يوافق <b>FlexyPurse</b> على استخدامها لشحن الرصيد </p>
+</p></section>
+
+<section id="account"><h2> 2. الحساب و التحقق </h2><p> يجب تقديم معلومات صحيحة ودقيقة. قد يطلب <b>FlexyPurse</b> التحقق الإضافي لأسباب تتعلق بالأمان أو الامتثال   أي معلومات مزيفة قد تؤدي إلى تعليق أو حذف نهائي للحساب </p></section>
+
+<section id="balance"><h2> 3. الرصيد و الشحن </h2> <p>  يظهر الرصيد في الحساب بالدولار الأمريكي USD . يمكن شحن الرصيد فقط عبر بطاقات الشحن المعتمدة المباعة في المتاجر الرسمية أو عبر وسائل الدفع داخل التطبيق  <b>FlexyPurse</b> لا يتحمل أي مسؤولية عن الخسائر الناتجة عن بطاقات تم شراؤها من مصادر غير معتمدة  البطاقات المسروقة أو غير الصالحة سيتم رفضها. </p>
+<p>  يحذر<b>FlexyPurse</b> بشكل صارم من شراء بطاقات من متاجر أو أشخاص غير معتمدين  قد تكون هذه البطاقات مسروقة أو غير قانونية، وقد تعرضك للمساءلة  يتم عرض المتاجر الموثوقة داخل خريطة التطبيق بشكل واضح  </p>
+</section>
+
+<section id="green points"><h2> 4.  النقاط  الخضراء  </h2><p>  تُمنح النقاط الخضراء تلقائيا عند شحن الرصيد من خلال المتاجر المعتمدة , و هذه النقاط   </p> 
+<p>- ليست  نقوداً </p> 
+<p>- لا يمكن بيعها أو استبدالها أو سحبها </p>
+<p> - لا يمكن تحويلها لمستخدم آخر و تستخدم فقط للميزات المتاحة داخل التطبيق  </p>
+<p> عند وصول المستخدم إلى ألف نقطة خضراء، يقوم التطبيق بتمويل زراعة الأشجار بهذا الرصيد، ويظهر التقدم في شريط مخصص لذلك  تكلفة زراعة الأشجار تُخصم بالكامل من أرباح <b>FlexyPurse</b> ولا تمس رصيد المستخدم إطلاقا. يمكن للمستخدم أيضا التبرع لزراعة الأشجار في أي وقت حتى قبل الوصول إلى ألف نقطة. تكلفة غرس شجرة تقدر بحوالي واحد دولار أمركي </p>
+</section>
+
+<section id="local"><h2> 5. المدفوعات  المحلية </h2><p> بالنسبة للخدمات المحلية :   كهرباء، ماء، اتصالات، تعليم، اشتراكات، إلخ  ، يتم خصم المبلغ بعد تحويله إلى عملة الخدمة، إضافة إلى أي رسوم مطبقة 
+ جميع العمليات بعد تأكيدها نهائية وغير قابلة  للاسترجاع
+</p></section>
+
+<section id="intl"><h2> 6.  المدفوعات  الدولية </h2><p> تعتمد المدفوعات الدولية على مزودي خدمات خارجيين. قد يفرض هؤلاء حدوداً أو تأخيرات أو رفضاً للعمليات  <b>FlexyPurse</b> لا يسيطر على هذه القرارات وغير مسؤول عنها </p></section>
+
+<section id="liability"><h2> 7. المسؤولية و القيود</h2><p> <b>FlexyPurse</b> لا يتحمل مسؤولية  </p>
+<p> - الخسائر الناتجة عن بطاقات غير معتمدة  </p>
+<p> - الأضرار الناتجة عن إهمال المستخدم  </p>
+<p> - توقف التطبيق للصيانة  </p>
+<p> - مشاكل الأطراف الأخرى  </p>
+<p> <b>FlexyPurse</b> لا يضمن توفر الخدمة بشكل دائم  </p>
+</section>
+
+<section id="privacy"><h2> 8.  الخصوصية و الأمان</h2><p> يجمع <b>FlexyPurse</b> فقط البيانات اللازمة للتشغيل و التحقق و الأمان 
+أنت مسؤول عن حماية بيانات تسجيل الدخول <b>FlexyPurse</b> غير مسؤول عن أي دخول غير مصرح به ناتج عن إهمال المستخدم 
+<p> <b>FlexyPurse</b> يستخدم أنظمة للكشف عن الاحتيال أو النشاط المشبوه  قد يتم تعليق العمليات مؤقتا حتى اكتمال التحقق  </p>
+</p></section>
+
+<section id="termination"><h2> 9. الإنهاء و التعليق </h2><p> قد يتم تعليق أو إغلاق الحساب في حال مخالفة الشروط أو الاشتباه في الاحتيال  قد يتم تجميد الرصيد مؤقتا لحين انتهاء التحقيق </p>
+ <p> يمكن للمستخدم تعطيل حسابه مؤقتاً والعودة لاستخدامه لاحقاً   </p>
+<p> حذف الحساب نهائي ولا يمكن التراجع عنه  </p> 
+<p> قد يتم الاحتفاظ ببعض البيانات بعد الحذف لأسباب قانونية أو أمنية  </p>
+</section>
+
+<section id="disputes"><h2> 10. النزاعات و القوانين المطبقة </h2><p> يجب بدء أي نزاع عبر خدمة الدعم أولاً 
+و في حال عدم التوصل إلى حل، تتم معالجة النزاع وفقاً للمبادئ الدولية للقانون الرقمي، وأمام جهة قضائية مختصة يتم تحديدها بحسب الإطار التشغيلي لـ <b>FlexyPurse</b> 
+</p></section>
+
+<section id="contact"><h2> 11. الاتصال </h2><p>لأي استفسار أو ملاحظة أو طلب يتعلق بهذه الشروط والأحكام، يمكنكم التواصل مع فريق الدعم عبر البريد الإلكتروني:<b>support@flexypurse.com</b></p></section>
+`,
+
+fr:`<section id="intro"><h2> 1. Introduction</h2><p> Les présentes Conditions d’utilisation régissent l’usage de <b>FlexyPurse</b>, 
+une application permettant de gérer un solde en USD et de le recharger via des cartes cadeaux certifiées ou des paiements intégrés. 
+En utilisant <b>FlexyPurse</b>, vous acceptez ces conditions. Si vous refusez, veuillez cesser d’utiliser l’application.
+<h3>Définitions</h3>
+<p>Compte désigne votre profil utilisateur contenant vos informations, votre solde et votre historique.</p>
+<p>Solde désigne la valeur disponible en USD.</p>
+<p>Green Points désigne les points de fidélité accordés lors des recharges éligibles.</p>
+<p>Magasins certifiés désigne les partenaires officiels affichés sur la carte de l’application.</p>
+<p>Cartes cadeaux désigne les cartes approuvées par <b>FlexyPurse</b>.</p></p></section>
+
+<section id="account"><h2> 2. Compte & Vérification</h2><p> Vous devez fournir des informations exactes.
+ <b>FlexyPurse</b> peut demander une vérification supplémentaire pour des raisons de sécurité ou de conformité.
+ Toute fausse information peut entraîner la suspension ou la suppression définitive du compte.</p></section>
+
+<section id="balance"><h2> 3. Solde & Rechargements</h2><p> Le solde est affiché en USD. Les rechargements doivent être effectués exclusivement via des cartes certifiées ou des paiements in-app. 
+<b>FlexyPurse</b> n’est pas responsable des pertes liées à des cartes achetées hors réseau officiel. Les cartes invalides ou volées seront rejetées.
+<b>FlexyPurse</b> avertit strictement les utilisateurs de ne pas acheter de cartes auprès de sources non autorisées.
+ Ces cartes peuvent être illégales ou volées et entraîner des problèmes juridiques. Les magasins certifiés sont visibles sur la carte de l’application.
+</p></section>
+
+<section id="green points"><h2> 4. Green Points</h2><p> Les Green Points sont attribués automatiquement lorsque l’utilisateur recharge son solde via des points de vente certifiés.Ces points:
+<p> – ne sont pas de l’argent. </p>
+<p> – ne peuvent pas être vendus, échangés ou retirés. </p>
+<p> – ne peuvent pas être transférés à d’autres utilisateurs, et sont utilisables uniquement pour les fonctionnalités intégrées à l’application. </p>
+<p> Une fois que l’utilisateur atteint mille Green Points, ceux-ci servent à financer la plantation d’arbres, avec une barre de progression affichant l’avancement. 
+Le coût de plantation est totalement couvert par les bénéfices de FlexyPurse et n’affecte jamais le solde de l’utilisateur.
+ L’utilisateur peut également choisir de faire un don pour planter des arbres à tout moment, même avant d’atteindre le seuil des mille points. 
+Le coût de planter un arbre est fixer à un dollar par arbre.</p></section>
+
+<section id="local"><h2> 5. Paiements Locaux</h2><p> Pour les services locaux (électricité, eau, télécom, éducation, abonnements, etc.),
+ le montant converti dans la devise du service sera déduit du solde, plus les éventuels frais.
+Toute transaction validée est finale et non remboursable.
+</p></section>
+
+<section id="intl"><h2> 6. Paiements Internationaux</h2><p> Les paiements internationaux reposent sur des prestataires tiers.
+ Ces partenaires peuvent appliquer des limites, retards ou refus. <b>FlexyPurse</b> n’a aucun contrôle sur ces décisions et n’en est pas responsable.</p></section>
+
+<section id="liability"><h2> 7. Responsabilité & Limitations</h2><p> <b>FlexyPurse</b> n’est pas responsable des pertes causées par des cartes non officielles, 
+des dommages dus à une mauvaise utilisation, ou des interruptions techniques. La disponibilité continue du service n’est pas garantie.
+</p></section>
+
+<section id="privacy"><h2> 8. Confidentialité & Sécurité</h2><p> <b>FlexyPurse</b> collecte uniquement les données nécessaires au fonctionnement, 
+à la vérification et à la sécurité du compte. Vous devez protéger vos identifiants. <b>FlexyPurse</b> n’est pas responsable des accès non autorisés résultant de votre négligence.
+<p> <b>FlexyPurse</b> analyse les transactions pour détecter tout comportement suspect. Certaines opérations peuvent être gelées le temps de vérifications.</p>
+</p></section>
+
+<section id="termination"><h2> 9. Suspension et Résiliation</h2><p> Votre accès au service peut être suspendu ou définitivement résilié si vous vous engagez dans des actions interdites, 
+violez les présentes Conditions, tentez une fraude, abusez du système ou soulevez des problèmes de sécurité ou juridiques.
+Nous pouvons restreindre certaines fonctionnalités, bloquer des mouvements de solde ou verrouiller le compte sans préavis en cas d’activité suspecte.
+Vous pouvez désactiver votre compte à tout moment. La désactivation est temporaire et réversible.
+La suppression de votre compte est définitive et irréversible.
+Même après suppression, certaines informations peuvent être conservées pour des raisons légales, de sécurité, d’audit, de prévention de la fraude ou de conformité.</p></section>
+
+<section id="disputes"><h2> 10. Litiges & Loi Applicable</h2><p>Tout litige doit d’abord passer par le support. En cas d’absence de solution, 
+le litige sera traité selon les principes internationaux du droit numérique et confié à une juridiction compétente déterminée selon le cadre opérationnel de <b>FlexyPurse</b>.
+</p></section>
+
+<section id="contact"><h2> 11. Contact</h2><p>Pour toute question, remarque ou demande liée à ces Conditions d’utilisation, vous pouvez contacter notre équipe à l’adresse suivante <b>support@flexypurse.com</b></p></section>
+`
+};
+
+function buildTOC(lang){
+  document.getElementById("toc").innerHTML =
+    tocLabels[lang].map((label,i)=>`<a href="#${tocIds[i]}">${label}</a>`).join("");
+}
+
+function loadLang(lang){
+  document.getElementById("terms").innerHTML = terms[lang];
+  document.body.dir = lang==="ar" ? "rtl" : "ltr";
+  buildTOC(lang);
+  window.currentLang = lang;
+}
+
+function downloadPDF(){
+  const termsDiv = document.getElementById("terms").cloneNode(true);
+ 
+ termsDiv.querySelectorAll("h1, h2, h3").forEach(el => {
+    el.style.color = "#000";
+  });
+
+  const wrapper = document.createElement("div");
+  wrapper.style.background = "#fff";
+  wrapper.style.color = "#000";
+  wrapper.style.padding = "25px";
+  wrapper.style.fontFamily = "Arial, sans-serif";
+  wrapper.style.fontSize = "16px";
+  wrapper.style.lineHeight = "1.6";
+
+   const titles = {
+    en: "FlexyPurse — Terms of Service",
+    ar: "FlexyPurse _ شروط الاستخدام",
+    fr: "FlexyPurse — Conditions d'utilisation"
+  };
+
+  const title = document.createElement("h1");
+  title.textContent = titles[currentLang];
+  title.style.textAlign = "center";
+  title.style.fontSize = "24px";
+  title.style.marginBottom = "20px";
+  title.style.color = "#000";
+
+  wrapper.appendChild(title);
+  wrapper.appendChild(termsDiv);
+
+  html2pdf().set({
+    margin: [15, 15, 15, 15],
+    filename: "FlexyPurse-Terms-" + currentLang + ".pdf",
+    image: { type: 'jpeg', quality: 1 },
+    html2canvas: { scale: 2, backgroundColor: '#fff', scrollY: 0 },
+    jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
+    pagebreak: { mode: ['css', 'legacy'] }
+  }).from(wrapper).save();
+}
+
+loadLang("en");
+</script>
+
+</body>
+</html>
